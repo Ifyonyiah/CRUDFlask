@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="mt-4">Car Rental Details</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ rental.make }} {{ rental.model }}</h5>
+            <p class="card-text">
+                <strong>Year:</strong> {{ rental.year }}<br>
+                <strong>Color:</strong> {{ rental.color }}<br>
+                <strong>Date Rented:</strong> {{ rental.rented_date if rental.rented_date else 'Not Rented' }}<br>
+                <strong>Availability:</strong>
+                {% if rental.available %}
+                    <span class="text-success">Available</span>
+                {% else %}
+                    <span class="text-danger">Not Available until {{ rental.available_date }}</span>
+                {% endif %}
+            </p>
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+{% endblock %}

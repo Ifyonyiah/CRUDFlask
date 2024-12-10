@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>New Rental</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>{{ form.make.label }} {{ form.make() }}</div>
+        <div>{{ form.model.label }} {{ form.model() }}</div>
+        <div>{{ form.year.label }} {{ form.year() }}</div>
+        <div>{{ form.color.label }} {{ form.color() }}</div>
+        <div>{{ form.submit() }}</div>
+    </form>
+{% endblock %}
